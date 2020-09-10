@@ -23,7 +23,26 @@ export default {
  components:{
  Header,
  QuestionBox
-}
+},
+data() {
+    return {
+      questions: [],
+      index: 0,
+      numCorrect: 0,
+      numTotal: 0
+    }
+  },
+  methods: {
+    next() {
+      this.index++
+    },
+    increment(isCorrect) {
+      if (isCorrect) {
+        this.numCorrect++
+      }
+      this.numTotal++
+    }
+  },
 }
 
 </script>
