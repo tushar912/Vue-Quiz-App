@@ -1,10 +1,16 @@
 <template>
   <div id="app">
-   <Header/>
+   <Header
+   :numCorrect="numCorrect"
+      :numTotal="numTotal"/>
    <b-container class="container">
       <b-row>
         <b-col sm="6" offset="3">
-          <QuestionBox/>
+          <QuestionBox
+          v-if="questions.length"
+            :currentQuestion="questions[index]"
+            :next="next"
+            :increment="increment"/>
         </b-col>
       </b-row>
     </b-container>
